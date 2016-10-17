@@ -1,0 +1,25 @@
+body {
+	margin-left:600px;
+	margin-right:600px;
+}
+
+.head{
+	color:#21610B;
+}
+
+.blue{
+	color:blue;
+}
+
+span{
+	color:orange;
+}
+
+.red{
+	color:#8A0808;
+}
+
+.blau{
+	color:purple;
+	text-decoration:underline; 
+}

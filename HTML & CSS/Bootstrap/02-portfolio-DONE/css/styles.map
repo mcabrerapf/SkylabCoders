@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/styles.css",
+	"sources": [
+		"../sass/styles.scss"
+	],
+	"sourcesContent": [
+		"$sexycolor: #817828;\r\n.container{\r\n\tcolor: $sexycolor;\r\n}"
+	],
+	"mappings": ";AACA,AAAA,UAAU,CAAA;EACT,KAAK,EAFM,OAAO;CAGlB",
+	"names": []
+}

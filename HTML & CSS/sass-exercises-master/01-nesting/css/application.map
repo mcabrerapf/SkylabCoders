@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/application.css",
+	"sources": [
+		"../sass/application.scss"
+	],
+	"sourcesContent": [
+		"$green: #bada55;\n$white: #ffffff;\n$black: #000000;\n\n.header {\n  background: $white;\n  border-bottom: 5px solid $black;\n  color: $white;\n\n  a {\n    color: $white;\n\n    &:hover {\n      color: $black;\n      border-bottom: $white;\n      text-decoration: none;\n    }\n  }\n}\n"
+	],
+	"mappings": ";AAIA,AAAA,OAAO,CAAC;EACN,UAAU,EAJJ,OAAO;EAKb,aAAa,EAAE,GAAG,CAAC,KAAK,CAJlB,OAAO;EAKb,KAAK,EANC,OAAO;CAiBd;;;AAdD,AAKE,OALK,CAKL,CAAC,CAAC;EACA,KAAK,EATD,OAAO;CAgBZ;;;AAbH,AAKE,OALK,CAKL,CAAC,AAGE,MAAM,CAAC;EACN,KAAK,EAXH,OAAO;EAYT,aAAa,EAbX,OAAO;EAcT,eAAe,EAAE,IAAK;CACvB",
+	"names": []
+}

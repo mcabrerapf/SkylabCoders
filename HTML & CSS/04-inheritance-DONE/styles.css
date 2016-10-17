@@ -1,0 +1,15 @@
+*{
+	font-family: arial;
+}
+h1, h2, h3 {
+	color: #9D7A3F;
+}
+ul{
+	color: #9D7A3F;
+}
+p{
+	color: red;
+	border-left: 20px solid #9D7A3F;
+	padding-left: 20px;
+	margin-left: 40px;
+}

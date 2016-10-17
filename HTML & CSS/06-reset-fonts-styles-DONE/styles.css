@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'PTSans';
+  src: url('fonts/PTSansRegular.eot');
+  src: url('fonts/PTSansRegular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PTSansRegular.woff') format('woff'),
+       url('fonts/PTSansRegular.ttf') format('truetype'),
+       url('fonts/PTSansRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('fonts/PTSansItalic.eot');
+  src: url('fonts/PTSansItalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PTSansItalic.woff') format('woff'),
+       url('fonts/PTSansItalic.ttf') format('truetype'),
+       url('fonts/PTSansItalic.svg') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('fonts/PTSansBold.eot');
+  src: url('fonts/PTSansBold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PTSansBold.woff') format('woff'),
+       url('fonts/PTSansBold.ttf') format('truetype'),
+       url('fonts/PTSansBold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSans';
+  src: url('fonts/PTSansBoldItalic.eot');
+  src: url('fonts/PTSansBoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PTSansBoldItalic.woff') format('woff'),
+       url('fonts/PTSansBoldItalic.ttf') format('truetype'),
+       url('fonts/PTSansBoldItalic.svg') format('svg');
+  font-weight: bold;
+  font-style: italic;
+} 
+
+*{
+  font-family: PTSans;
+}
+
+.wraper{
+  border-top: 4px solid white;
+  border-left: 70px solid white;
+  border-right: 70px solid white;
+}
+
+h1, h2, h3, p{
+  padding-left: 80px;
+  padding-right: 170px;
+}
+p{
+  padding-left: 200px;
+}
+.main{
+  background-color: #E1EEFD;
+  padding-bottom: 10px;
+  
+}
+
+.big-css{
+  color: white;
+  font-size: 105px;
+  text-shadow: 3px 3px 4px black;
+}
+.main-head{
+  color: #FC6600;
+  position: relative;
+  right: 90px;
+  text-shadow: 3px 3px 4px black;
+}
+.img-left{
+  
+  height: 700px;
+  background-color: #E1EEFD;
+  float: left;
+
+}
+.img-right{
+ 
+  height: 700px;
+  background-color: #E1EEFD;
+  float: right;
+}
+.dark-blue{
+  color: #254C8F;
+  border-bottom: 1px solid grey;
+  font-size: 30px;
+  padding-left: 20px;
+}
+.orange{
+  color: #FC6600;
+}
+.grey{
+  color: #A1A2A2;
+  display: block;
+}
+h1{
+  background-image: url("images/bg_banner.jpg");
+}
+ul{
+  float: right;
+  color: #65ABD8;
+  padding-right: 20px;
+
+}

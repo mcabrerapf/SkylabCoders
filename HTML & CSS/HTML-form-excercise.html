@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>HTML5 Form Excercise</h1>
+</header>
+
+<form action="">
+<fieldset>
+    <legend>Customer Info</legend>
+    <div>
+        <label for="name">
+        Name: 
+        <input id="name" type="text" name="name" autofocus="" required="" placeholder="Enter your name">
+    </label>
+    </div>
+    <div>
+    <label for="telephone">
+        Telephone: 
+        <input id="telephone" type="tel" name="phone-number" placeholder="Patern: 1-234-567-8910 " pattern="[0-9]-[0-9]{3}-[0-9]{3}-[0-9]{4}" required="">
+    </label>
+    </div>
+    <div>
+    <label for="email">
+        Email Address:
+        <input id="email" type="email" name="email-address" placeholder="Enter your email adress" required="">
+    </label>
+        
+    </div>
+        
+
+</fieldset>
+
+<fieldset>
+    <legend>Books</legend>
+    <label>
+    <input list="browsers"> 
+        <datalist id="browsers">
+            <option value="ass"></option>
+            <option value="bass"></option>
+            <option value="grass"></option>
+        </datalist>
+    </label>
+    <label>
+        Quantity (Maximum 5):
+        <input type="number" name="bleh" min="1" max="5">
+    </label>
+</fieldset>
+
+
+<input type="submit" name="submit" value="Submit">
+</form>
+</body>
+</html>
