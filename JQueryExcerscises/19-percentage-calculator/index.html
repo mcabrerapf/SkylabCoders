@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Percentage Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style>
+		.container {
+			border:1px solid #aaa;
+			width: 75%;
+			margin-top:30px;
+			padding: 20px;
+			border-radius: 10px;
+			font-size: 1.5em;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<section>
+
+
+      <form id="f1" action="#" class="form-inline form-group">
+        <fieldset class="row">
+					<div class="col-md-6 ">
+						<p>What is <input class="form-control" id="f1-a" type="text" size="3">% of <input class="form-control" id="f1-b" type="text" size="7">?</p>
+					</div>
+					<div class="col-md-6">
+	          <button id="f1-calculate" class="btn btn-primary form-control">Calculate</button>
+						<!-- result = a / 100 * b; -->
+	          <input class="form-control" id="f1-result" type="text" size="7" readonly="readonly">
+	          <span class="remove">%</span>
+					</div>
+					<div id="helpBlock1a" class="col-md-12 hidden">
+						<p  class="help-block">Your first input isnt a number!!!</p>
+					</div>
+					<div id="helpBlock2a" class="col-md-12 hidden">
+						<p  class="help-block">Your second input isnt a number!!!</p>
+					</div>
+        </fieldset>
+      </form>
+
+
+    <form id="f2" action="#" class="form-inline form-group">
+        <fieldset class="row">
+					<div class="col-md-6 ">
+						<p>What is <input class="form-control" id="f2-a" type="text" size="3">% of <input class="form-control" id="f2-b" type="text" size="7">?</p>
+					</div>
+					<div class="col-md-6">
+	          <button id="f2-calculate" class="btn btn-primary form-control">Calculate</button>
+						<!-- result = a / 100 * b; -->
+	          <input class="form-control" id="f2-result" type="text" size="7" readonly="readonly">
+	          <span class="remove">%</span>
+					</div>
+					<div id="helpBlock1b" class="col-md-12 hidden">
+						<p  class="help-block">Your first input isnt a number!!!</p>
+					</div>
+					<div id="helpBlock2b" class="col-md-12 hidden">
+						<p  class="help-block">Your second input isnt a number!!!</p>
+					</div>
+        </fieldset>
+      </form>
+
+   <form id="f3" action="#" class="form-inline form-group">
+        <fieldset class="row">
+					<div class="col-md-6 ">
+						<p>What is <input class="form-control" id="f3-a" type="text" size="3">% of <input class="form-control" id="f3-b" type="text" size="7">?</p>
+					</div>
+					<div class="col-md-6">
+	          <button id="f3-calculate" class="btn btn-primary form-control">Calculate</button>
+						<!-- result = a / 100 * b; -->
+	          <input class="form-control" id="f3-result" type="text" size="7" readonly="readonly">
+	          <span class="remove">%</span>
+					</div>
+					<div id="helpBlock1c" class="col-md-12 hidden">
+						<p  class="help-block">Your first input isnt a number!!!</p>
+					</div>
+					<div id="helpBlock2c" class="col-md-12 hidden">
+						<p  class="help-block">Your second input isnt a number!!!</p>
+					</div>
+        </fieldset>
+      </form>
+
+      <p id="tips"><strong>Tips:</strong> Use tab to move to the next field. Use shift-tab to move to the previous field. Press enter to calculate.</p>
+    </section>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+
+
+$("#f1-calculate").on("click", function(event){
+
+		event.preventDefault();
+		var bin1, bin2, finalTotal;
+        bin1 = +$('#f1-a').val()/100;
+        bin2 = +$('#f1-b').val();
+        finalTotal = (bin1) * (bin2);
+      	
+      	if(isNaN(bin1) === true && isNaN(bin2) === true){
+      		$("#f1").addClass('has-error')
+      		$("#helpBlock1a").removeClass('hidden')
+      		$("#helpBlock2a").removeClass('hidden')
+        }else if (isNaN(bin1) === true){
+        	$("#f1").addClass('has-error')
+        	$("#helpBlock1a").removeClass('hidden')
+        	$("#helpBlock2a").addClass('hidden')
+        }else if (isNaN(bin2) === true){
+        	$("#f1").addClass('has-error')
+        	$("#helpBlock2a").removeClass('hidden')
+        	$("#helpBlock1a").addClass('hidden')
+        }else{
+        $("#f1").removeClass('has-error')
+        $("#f1").addClass('has-success')
+        $('#f1-result').val(finalTotal);
+        $("#helpBlock1a").addClass('hidden')
+        $("#helpBlock2a").addClass('hidden')
+        
+    }
+});
+
+
+$("#f2-calculate").on("click", function(event){
+
+		event.preventDefault();
+		var bin1, bin2, finalTotal;
+        bin1 = +$('#f2-a').val()/100;
+        bin2 = +$('#f2-b').val();
+        finalTotal = ((bin1) / (bin2))*100
+      
+        if(isNaN(bin1) === true && isNaN(bin2) === true){
+      		$("#f2").addClass('has-error')
+      		$("#helpBlock1b").removeClass('hidden')
+      		$("#helpBlock2b").removeClass('hidden')
+        }else if (isNaN(bin1) === true){
+        	$("#f2").addClass('has-error')
+        	$("#helpBlock1b").removeClass('hidden')
+        	$("#helpBlock2b").addClass('hidden')
+        }else if (isNaN(bin2) === true){
+        	$("#f2").addClass('has-error')
+        	$("#helpBlock2b").removeClass('hidden')
+        	$("#helpBlock1b").addClass('hidden')
+        }else{
+        $("#f2").removeClass('has-error')
+        $("#f2").addClass('has-success')
+        $('#f2-result').val(finalTotal);
+        $("#helpBlock1b").addClass('hidden')
+        $("#helpBlock2b").addClass('hidden')
+        
+    }
+});
+
+
+$("#f3-calculate").on("click", function(event){
+
+		event.preventDefault();
+		var bin1, bin2, finalTotal;
+        bin1 = +$('#f3-a').val()/100;
+        bin2 = +$('#f3-b').val();
+        finalTotal = (bin2 - bin1) / bin1  * 100;
+      
+         if(isNaN(bin1) === true && isNaN(bin2) === true){
+      		$("#f3").addClass('has-error')
+      		$("#helpBlock1c").removeClass('hidden')
+      		$("#helpBlock2c").removeClass('hidden')
+        }else if (isNaN(bin1) === true){
+        	$("#f3").addClass('has-error')
+        	$("#helpBlock1c").removeClass('hidden')
+        	$("#helpBlock2c").addClass('hidden')
+        }else if (isNaN(bin2) === true){
+        	$("#f3").addClass('has-error')
+        	$("#helpBlock2c").removeClass('hidden')
+        	$("#helpBlock1c").addClass('hidden')
+        }else{
+        $("#f3").removeClass('has-error')
+        $("#f3").addClass('has-success')
+        $('#f3-result').val(finalTotal);
+        $("#helpBlock1c").addClass('hidden')
+        $("#helpBlock2c").addClass('hidden')
+        
+    }
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>
