@@ -119,9 +119,11 @@
 		.done(function(data) {
 			console.log(data);
 			console.log(data.results.registered)
+			var name = data.results[0].name.first + " " + data.results[0].name.last
+			$(".full-name").text(name)
 			$(".registration-date").text(data.results[0].registered)
 			$(".born-date").text(data.results[0].dob)
-			$(".nationality").text(data.results[0].location.state)
+			$(".nationality").text(data.results[0].nat)
 			$(".gender").text(data.results[0].gender)
 			$(".address").text(data.results[0].location.street)
 			$(".email").text(data.results[0].email)
