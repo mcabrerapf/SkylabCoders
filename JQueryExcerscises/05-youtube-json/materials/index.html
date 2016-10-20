@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX Youtube</title>
+</head>
+<body>
+
+	<h1>Youtube</h1>
+	<button>Get Data!</button>
+	<ul id="youtuber"></ul>
+
+
+	<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script>
+
+		$("button").on("click", function() {
+
+			$.ajax({
+				url: 'youtube.json',
+				dataType: 'json'
+			})
+			.done(function( data ) {
+
+				$.each( data.data.items, function(i, item) {
+					$("#youtuber").append( $("<li>" + item.title + "</li>") )
+
+				})
+				$(function urler () {
+					$("#youtuber").append("<a>")
+					$("a").attr ( "href", data.data.items[0].player.default )
+					$("a").append("<img>")
+					$("img").attr ( "src", data.data.items[0].thumbnail.hqDefault )
+				})
+			})
+		})
+
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Spotify Project</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>No BEATLES</h1>
+			<form id="artist-search" action="" method="POST" class="form-inline" role="form">
+
+				<div class="form-group">
+					<label class="sr-only" for="">label</label>
+					<input type="text" class="form-control"  placeholder="Input artist name...">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Search!</button>
+			</form>
+		</div>
+	</div>
+
+	<div id="results1" class="container">
+		<form action="" class="form-inline">
+
+			<select name="" id="" class="form-control hide">
+			</select>
+
+			<div id="details">
+				<h2><span></span> <small></small></h2>
+				<p></p>
+			</div>
+
+		</form>
+	</div>
+
+	<div id="results2" class="container">
+		<form action="" class="form-inline">
+
+			<select name="" id="" class="form-control hide">
+			</select>
+
+			<div id="details">
+				<h2><span></span> <small></small></h2>
+				<p></p>
+			</div>
+
+		</form>
+		<ul id="tracks">
+			
+		</ul>
+	</div>
+
+
+
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+
+		$("#artist-search").on("submit", function(e) {
+
+			e.preventDefault();
+			var $input = $(this).find("input");
+			var artistQuery = $input.val();
+			if(artistQuery === "beatles" || artistQuery === "BEATLES" || artistQuery === "Beatles"){
+				alert("NO WAY JOSE!!!!")
+			}else{
+
+
+				var URL_SEARCH_API = "https://api.spotify.com/v1/search?type=artist&query="
+				var urlSearchArtist = URL_SEARCH_API + artistQuery
+				console.log(urlSearchArtist);
+
+				$.ajax({
+					url: urlSearchArtist,
+					dataType: 'json'
+				})
+				.done(function( dataArtists ) {
+					var listArtist = "<option>Select artist...</option>";
+
+
+					$.each( dataArtists.artists.items, function(i, artist) {
+						listArtist += '<option value="' + artist.id + '">'  + artist.name + '</option>'
+						console.log(listArtist);
+					})    
+
+
+
+					$("#results1 select")
+					.html(listArtist)
+					.removeClass("hide");   
+
+
+					$("#results1 select").on("change", function() {
+						$(this).find("option").first().attr("disabled", "disabled")
+						var idArtist = $(this).val();
+						var URL_API_DETAILS = 'https://api.spotify.com/v1/artists/'
+						var urlDetailsArtist = URL_API_DETAILS + idArtist + '/albums';   
+						console.log(urlDetailsArtist)
+
+
+
+						$.ajax({
+							url: urlDetailsArtist,
+							dataType: 'json'
+						})
+						.done( function ( detailsAlbums ) {
+
+							var listAlbum = "<option>Select album...</option>";
+
+							$.each( detailsAlbums.items, function(i, album) {
+								listAlbum += '<option value="' + album.id + '">'  + album.name + '</option>'
+								console.log(listAlbum);
+							})    
+
+
+
+							$("#results2 select")
+							.html(listAlbum)
+							.removeClass("hide");   
+
+
+							$("#results2 select").on("change", function() {
+								$(this).find("option").first().attr("disabled", "disabled")
+								var idAlbum = $(this).val();
+								var URL_API_DETAILS = 'https://api.spotify.com/v1/albums/'
+								var urlDetailsAlbum = URL_API_DETAILS + idAlbum + '/tracks';   
+								console.log(urlDetailsAlbum)
+
+							////ULLLTIMMMAAAAA
+							$.ajax({
+								url: urlDetailsAlbum,
+								dataType: 'json'
+							})
+							.done( function ( detailsTracks ) {
+								$.each(detailsTracks.items, function (i, track){
+									$("#tracks").append( $("<a target='_blank' href='" + track.preview_url + "'><li>" + track.name + "</li></a>") )
+								})
+
+
+
+
+
+
+								
+							})    
+							
+						})  
+						})
+
+					})
+				})
+			}
+		})
+
+
+		
+
+
+	</script>
+
+</body>
+</html>
