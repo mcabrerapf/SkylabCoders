@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clocker</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="jumbotron">
+		<div class="container">
+			<h1><span id="hours"> -- </span> : <span id="minutes"> -- </span> : <span id="seconds"> -- </span> </h1>
+			<p>Contents ...</p>
+			<p>
+				<a class="btn btn-primary btn-lg">Learn more</a>
+			</p>
+		</div>
+	</div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script>
+		
+		var seconds = 55;
+		var minutes = 59;
+		var hours = 23;
+		var myCounter = setInterval( incrementClock, 1000)
+
+		function incrementClock() {
+			seconds++;
+			if (seconds < 60) {
+				$("h1 #seconds").text(seconds);
+				$("h1 #minutes").text(minutes);
+				$("h1 #hours").text(hours);
+			}
+			else {
+				seconds = 0;
+				$("h1 #seconds").text(seconds);
+				minutes++;
+				if (minutes < 60) {
+					$("h1 #minutes").text(minutes);
+				}else{
+					seconds = 0;
+					$("h1 #seconds").text(seconds);
+					minutes = 0;
+					$("h1 #minutes").text(minutes);
+					hours++
+				}if (hours < 24){
+					$("h1 #hours").text(hours);
+				}else{
+					seconds = 0;
+					$("h1 #seconds").text(seconds);
+					minutes = 0;
+					$("h1 #minutes").text(minutes);
+					hours = 0;
+					$("h1 #hours").text(hours);
+				}
+
+			}
+
+		}
+
+	</script>
+</body>
+</html>
