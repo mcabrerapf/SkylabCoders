@@ -12,9 +12,6 @@ angular.module('myApp')
 			function getTracks( albumId ) {
 				return $http.get("https://api.spotify.com/v1/albums/" + albumId + "/tracks");
 			}
-
-			getArtists: getArtists
-			console.log(getArtists)
 			return {
 				getArtists: getArtists,
 				getAlbums: getAlbums,

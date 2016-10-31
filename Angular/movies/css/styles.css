@@ -1,0 +1,13 @@
+header, footer, .navbar-default {
+	background: #702898;
+	color: white;
+}
+
+#navbar-brand li{
+	color: pink;
+}
+
+footer {
+	margin-top: 30px;
+	padding-top: 10px;
+}
