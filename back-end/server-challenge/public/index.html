@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" >
+<head>
+	<meta charset="UTF-8">
+	<title>Test Server</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body >
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Hello, Students!</h1>
+			<p>
+				<div ng-controller="getStudents">
+					<a  class="btn btn-primary btn-lg" ng-click="getStudents($event)">SHOW ME THE STUDENTS!!!!</a>
+					<div>
+						<ul>
+							<li ng-repeat="data in studentList">Name: {{data.name}} || Email: {{data.mail}} || Github: <a href="{{data.github}}">{{data.github}}</a></li>
+						</ul>
+					</div>
+				</div>
+				<form  ng-controller="filterStudents" action="" method="POST" role="form">
+					<legend>Filter Students</legend>
+
+					<div class="form-group">
+						<input ng-model="studentName" type="text" class="form-control" id="" placeholder="Student Name...">
+
+					</div>
+
+					
+
+					<button ng-click="filterStudents($event)" type="submit" class="btn btn-primary">FILTER!!!</button>
+					<div>
+						<ul>
+							<li ng-repeat="data in studentsByName">Name: {{data.name}} || Email:  {{data.mail}} || Github:  <a href="{{data.github}}">{{data.github}}</a></li>
+						</ul>
+					</div>
+				</form>
+			</p>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/filterController.js"></script>
+	<script src="js/service.js"></script>
+
+
+</body>
+</html>
