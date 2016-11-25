@@ -16,7 +16,11 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 #logo{
 	height: 15vh;
 	width: 100%;
+	background-color: #286090;
 	background-image: url("../logo.png");
+	background-size: 180px;
+	background-repeat: no-repeat;
+	background-position: center;
 	
 }
 
@@ -36,7 +40,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 }
 
 #body-items{
-	padding-top: 160px;
+	padding-top: 150px;
 }
 
 
@@ -56,13 +60,18 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 .card-top {
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
-	background-color: #249591;
+	background-color: #286090;
 	text-align: center;
 
 }
 .card-top h5 {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #2f3f76;
 	text-align: center;
 	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
 	text-shadow: 0.5px 0.5px grey;
 }
 .card-body{
@@ -104,3 +113,50 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 }
+
+
+/*user info*/
+
+.user-main {
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin-top: 10px;
+	background-color: #eeeeee;
+
+
+}
+.user-sub-category {
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 8px;
+	display: inline-block;
+	border-radius: 5px;
+	background-color: white;
+	padding: 10px 10px 10px 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+#user-image {
+	margin-top: 10px;
+	width:60%; 
+	border-radius: 20px; 
+	box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+	padding: 0
+}
+
+#comments{
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color: white;
+	padding: 2% 2% 2% 2%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background-color: #eee;
+
+}
+
+
+
+

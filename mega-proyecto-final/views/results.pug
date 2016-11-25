@@ -6,12 +6,12 @@ block content
     .container
         .flexer
             each user in data
-                .col-xs-6.col-md-4.col-lg-3
+                .col-xs-12.col-sm-6.col-md-4.col-lg-3
                     .card
                       .card-top    
                         h5
                           b #{user.name}
-                        img.img-circle(src='avatar.jpg', alt='Avatar', style='width:90px; height:90px; padding-bottom: 10px; margin-top:-15px')
+                        img.img-circle(src='avatar.jpg', alt='Avatar', style='width:50%; height:50%; padding-bottom: 10px; margin-top:-15px;')
                       .card-body
                         .card-category
                             h6
@@ -25,7 +25,7 @@ block content
                                 .card-sub-category #{genre}
                         .card-category
                             h6
-                                b Estudios
+                                b Studies
                             each studies in user.studies
                                 .card-sub-category  #{studies}
                         .card-category
@@ -45,8 +45,9 @@ block content
                             each band in user.band
                                 .card-sub-category  #{band} 
                         .card-button
-                          button.btn.btn-primary.btn-block(style='width: 95%;') More Info...
-                          button.btn.btn-success.btn-block(style='width: 95%;') Let's Jam!!!
+                          button.btn.btn-primary.btn-block(style='width: 95%;')
+                                a(href='/user', style='text-decoration: none; color: white;') More Info...
+                          button.btn.btn-success.btn-block(style='width: 95%; background-color:#0d8163;') Let's Jam!!!
 
     //- form#results(action='/results', method='post')
     //-     .container

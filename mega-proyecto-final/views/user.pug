@@ -1,6 +1,76 @@
 extends login
 
 block content
-	each user in data
-		h1 You play #{user.instrument}
-		p hello  #{user.name}
+
+    .container.user-main
+      .col-xs-6(style='border-right: 1px solid black;')
+        div(style='border-bottom: 1px solid black')
+          h4 
+            b Name:
+          p Manuel Cabrera
+        div(style='border-bottom: 1px solid black')
+          h4 
+            b Instruments:
+          .user-sub-category Guitarra
+          .user-sub-category Piano
+        div(style='border-bottom: 1px solid black')
+          h4 
+            b Genres:
+          .user-sub-category Folk
+          .user-sub-category Pop
+          .user-sub-category latin
+        div(style='border-bottom: 1px solid black')
+          h4 
+            b Material:
+          .user-sub-category Guitar
+          .user-sub-category Amp
+          .user-sub-category Mic
+        div(style='border-bottom: 1px solid black')
+          h4 
+            b Bands:
+          .user-sub-category Bombo Canibal
+          .user-sub-category Proyecto Fla
+        div(style='border-bottom: 1px solid black')
+          h4 
+            b Studies:
+          .user-sub-category Liceu
+          .user-sub-category Laula
+        button.btn.btn-primary.btn-block(style='width: 95%; margin-top: 20px; margin-bottom: 20px; padding: 20px;') Edit Info
+      .col-xs-6(style='text-align: center;')
+        img#user-image(src='avatar.jpg', alt='Avatar')
+        .col-xs-12.col-sm-6
+          h4 
+            b Local: 
+          h4.user-sub-category Yes
+        .col-xs-12.col-sm-6
+          h4
+            b Teacher:
+          h4.user-sub-category Yes
+        div(style='text-align: left; padding-left: 20%; margin-top: 120px')
+          h4 
+            b Description:
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet harum sed quod deleniti tempore, velit dolor atque, beatae, dolores eum quidem quia molestiae, rerum nam tempora? Temporibus illum ratione quas.
+          h4 
+            b Audios:
+          p www.google.com
+    .container(style='padding-top: 30px')
+      h1 Comments
+      #comments
+        h4(style='border-bottom: 1px solid black') David Soler
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      #comments
+        h4(style='border-bottom: 1px solid black') Dani Perez
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
