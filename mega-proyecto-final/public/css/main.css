@@ -16,7 +16,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 #logo{
 	height: 15vh;
 	width: 100%;
-	background-color: #286090;
+	background-color: #222222;
 	background-image: url("../logo.png");
 	background-size: 180px;
 	background-repeat: no-repeat;
@@ -25,12 +25,13 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 }
 
 
-#sign-up{
+body {
 
-	background-image: url("../singup-background.png");
+	background-image: url('http://imgwallpaper.info/download/20160201/life-is-music-simple-background-2560x1600.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	background-size: 100% 100%;
 }
 
 #statical{
@@ -102,11 +103,12 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 	padding-bottom: 10px;
 	margin-top: 10px;
 }
+.card-button button{
+	margin-top: 5px;
+}
 
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
-
-	border-radius: 5px 5px 0 0;
 	padding-top: 10px;
 }
 .flexer {
@@ -121,7 +123,11 @@ img {
 	border-radius: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	margin-top: 10px;
-	background-color: #eeeeee;
+	/*	background-color: #eeeeee;*/
+	background-image: url(http://imgwallpaper.info/download/20160201/life-is-music-simple-background-2560x1600.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+
 
 
 }
@@ -131,7 +137,7 @@ img {
 	margin-bottom: 8px;
 	display: inline-block;
 	border-radius: 5px;
-	background-color: white;
+	/*background-color: white;*/
 	padding: 10px 10px 10px 10px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -150,10 +156,13 @@ img {
 	margin-right: 5px;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	background-color: white;
+	/*background-color: white;*/
 	padding: 2% 2% 2% 2%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	background-color: #eee;
+	background-image: url(http://imgwallpaper.info/download/20160201/life-is-music-simple-background-2560x1600.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	/*background-color: #eee;*/
 
 }
 

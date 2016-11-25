@@ -7,53 +7,51 @@ block content
         div(style='border-bottom: 1px solid black')
           h4 
             b Name:
-          p Manuel Cabrera
+          p #{user.name}
         div(style='border-bottom: 1px solid black')
           h4 
             b Instruments:
-          .user-sub-category Guitarra
-          .user-sub-category Piano
+          each instrument in user.instrument
+            .user-sub-category #{instrument}
         div(style='border-bottom: 1px solid black')
           h4 
             b Genres:
-          .user-sub-category Folk
-          .user-sub-category Pop
-          .user-sub-category latin
+          each genre in user.genre
+            .user-sub-category #{genre}
         div(style='border-bottom: 1px solid black')
           h4 
             b Material:
-          .user-sub-category Guitar
-          .user-sub-category Amp
-          .user-sub-category Mic
+          each material in user.material
+            .user-sub-category #{material}
         div(style='border-bottom: 1px solid black')
           h4 
             b Bands:
-          .user-sub-category Bombo Canibal
-          .user-sub-category Proyecto Fla
+          each band in user.band
+            .user-sub-category #{band}
         div(style='border-bottom: 1px solid black')
           h4 
             b Studies:
-          .user-sub-category Liceu
-          .user-sub-category Laula
-        button.btn.btn-primary.btn-block(style='width: 95%; margin-top: 20px; margin-bottom: 20px; padding: 20px;') Edit Info
+          each study in user.studies
+            .user-sub-category #{study}
+        button.btn.btn-success.btn-block(style='width: 95%; margin-top: 20px; margin-bottom: 20px; padding: 20px;') Let's Jam!!!
       .col-xs-6(style='text-align: center;')
-        img#user-image(src='avatar.jpg', alt='Avatar')
+        img#user-image(src='http://pawsnpups.com/wp-content/themes/PNP/images/breeds/Chug.jpeg', alt='Avatar')
         .col-xs-12.col-sm-6
           h4 
             b Local: 
-          h4.user-sub-category Yes
+          h4.user-sub-category #{user.local}
         .col-xs-12.col-sm-6
           h4
             b Teacher:
-          h4.user-sub-category Yes
+          h4.user-sub-category #{user.teacherAvailable}
         div(style='text-align: left; padding-left: 20%; margin-top: 120px')
           h4 
             b Description:
           p
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet harum sed quod deleniti tempore, velit dolor atque, beatae, dolores eum quidem quia molestiae, rerum nam tempora? Temporibus illum ratione quas.
+            | #{user.description}
           h4 
             b Audios:
-          p www.google.com
+          p #{user.audios}
     .container(style='padding-top: 30px')
       h1 Comments
       #comments

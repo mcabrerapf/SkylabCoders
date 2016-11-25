@@ -5,13 +5,13 @@ block content
 
     .container
         .flexer
-            each user in data
+            each user in users
                 .col-xs-12.col-sm-6.col-md-4.col-lg-3
-                    .card
+                    .card(name=user._id)
                       .card-top    
                         h5
                           b #{user.name}
-                        img.img-circle(src='avatar.jpg', alt='Avatar', style='width:50%; height:50%; padding-bottom: 10px; margin-top:-15px;')
+                        img.img-circle(src='http://pawsnpups.com/wp-content/themes/PNP/images/breeds/Chug.jpeg', alt='Avatar', style='width:50%; height:50%; padding-bottom: 10px; margin-top:-15px;')
                       .card-body
                         .card-category
                             h6
@@ -45,9 +45,9 @@ block content
                             each band in user.band
                                 .card-sub-category  #{band} 
                         .card-button
-                          button.btn.btn-primary.btn-block(style='width: 95%;')
-                                a(href='/user', style='text-decoration: none; color: white;') More Info...
-                          button.btn.btn-success.btn-block(style='width: 95%; background-color:#0d8163;') Let's Jam!!!
+                            a(href='/user/' + user._id, style='text-decoration: none; color: white;')
+                                button.btn.btn-primary.btn-block(style='width: 95%;') More Info...
+                            button.btn.btn-success.btn-block(type='submit', style='width: 95%; background-color:#0d8163;') Let's Jam!!!
 
     //- form#results(action='/results', method='post')
     //-     .container

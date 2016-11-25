@@ -6,37 +6,37 @@ block content
         h2 Lets Find your musician!
         .form-group
           label What instrument(s) are you looking for?
-          input.form-control(name='instrumentSearch', type='text', placeholder='Enter instrument...' required)
+          input.form-control(name='instrument', type='text', placeholder='Enter instrument...' required)
         .form-group
           label Looking for a specific genre?
-          input.form-control(name='genreSearch', type='text', placeholder='Enter genre...' /*required*/)
+          input.form-control(name='genre', type='text', placeholder='Enter genre...' /*required*/)
         .form-group
           label Would you need him to have a practice place?
           div(style='display: block;')
           label
-            input(type='radio', name='localSearch', value='Yes' /*required*/)
+            input(type='radio', name='local', value='Yes' /*required*/)
             | Yes
           label
-            input(type='radio', name='localSearch', value='No' /*required*/)
+            input(type='radio', name='local', value='No' /*required*/)
             | No
           label
-            input(type='radio', name='localSearch', value='' /*required*/)
+            input(type='radio', name='local', value='' /*required*/)
             | Doesn't Matter
         .form-group
           label Do you need to recieve classes from him/her? 
           div(style='display: block;')
             label
-              input(type='radio', name='teacherSearch', value='Yes' /*required*/)
+              input(type='radio', name='teacherAvailable', value='Yes' /*required*/)
               | Yes
             label
-              input(type='radio', name='teacherSearch', value='No' /*required*/)
+              input(type='radio', name='teacherAvailable', value='No' /*required*/)
               | No
             label
-              input(type='radio', name='teacherSearch', value='' /*required*/)
+              input(type='radio', name='teacherAvailable', value='' /*required*/)
               | Doesn't Matter
         .form-group
           label Looking for a member of a specific band?
-          input.form-control(name='bandSearch', type='text', placeholder='Enter band name...')
+          input.form-control(name='band', type='text', placeholder='Enter band name...')
         //- .form-group
         //-   label Looking for a member of a specific band?
         //-   input.form-control(name='idSearch', type='text', placeholder='...')
