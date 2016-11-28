@@ -1,6 +1,7 @@
 const express = require('express')
-const router = express.Router()
-const userSchema = require('../models/userSchema')
+const passport = require('passport');
+const Account = require('../models/account');
+const router = express.Router();
 
 router.get('/', (req, res) => {
 	res.render("index.pug")
@@ -14,18 +15,9 @@ router.get('/sign-up-success', (req, res) => {
 router.get('/home', (req, res) => {
 	res.render("index.pug")
 })
-
-// //passport
-// router.get('/login', (req, res) => {
-// 	res.render("login.pug")
-// })
-// router.post('/login', passport.authenticate('local', { 
-// 	successRedirect: '/user',
-// 	failureRedirect: '/login' }));
-// //
 router.get('/user/:id', (req, res) =>{
 	var id = req.params.id
-	userSchema.findById(id, (err, user) => {
+	Account.findById(id, (err, user) => {
 		console.log(user)
 		res.render('user.pug', {user})	
 	})
@@ -39,23 +31,37 @@ router.get('/results', (req, res) => {
 })
 
 router.post('/sign-up', (req,res) => {
-	var user = req.body
-	// instance of model
-	var newUser = new userSchema(user);
+	var userInputs = req.body
+	userInputs.instrument = userInputs.instrument.split(", ");
+	userInputs.genre = userInputs.genre.split(", ");
+	userInputs.studies = userInputs.studies.split(", ");
+	userInputs.material = userInputs.material.split(", ");
+	userInputs.band = userInputs.band.split(", ");
+	userInputs.audios = userInputs.audios.split(", ");
 
-	// saving data to the DB
-	newUser.save( (err, newUser) => {
-		if (err) return console.error(err);
-		console.log("saved succesfully");
+	
+	const password = req.body.password;
+
+	delete userInputs.password;
+
+	Account.register( new Account(userInputs), password, (err, account) => {
+		if (err) return res.render('sign-up', { account : account });
+		console.log(account)
+		passport.authenticate('local')(req, res, () =>  
+			res.redirect('/sign-up-success') );
 	});
-	res.redirect("/sign-up-success")
-
 })
+router.get('/login', function(req, res) {
+	res.render('login', { user : req.user });
+});
+
+router.post('/login', passport.authenticate('local'), function(req, res) {
+	res.redirect('/');
+});
 router.post('/search', (req,res) => {
 	console.log(req.body)
 	var filter = {}
 	var { instrument, local, teacherAvailable, band, genre } = req.body;
-	debugger;
 	if (band) {
 		console.log("we are in band")
 		bands = band.split(",");
@@ -77,7 +83,7 @@ router.post('/search', (req,res) => {
 		filter.teacherAvailable = teacherAvailable;
 	}
 	
-	userSchema.find( filter, function (err, users) {
+	Account.find( filter, function (err, users) {
 		if (err) return handleError(err);
 		console.log(users)
 		res.render("results", {users})

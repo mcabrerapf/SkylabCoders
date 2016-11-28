@@ -1,11 +1,11 @@
-const mongoose = require('mongoose')
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const collection = 'datos';
-
+const passportLocalMongoose = require('passport-local-mongoose');
 // Schema definition
-const userSchema = mongoose.Schema({
+const Account = new Schema({
 	username: String,
-	pass: String,
+	password: String,
 	name: String,
 	instrument: [String],
 	genre: [String],
@@ -19,10 +19,9 @@ const userSchema = mongoose.Schema({
 	email: String,
 	phone: Number,
 	audios: [String]
-},
-{ collection });
+});
 
 // Model definition
-var user = mongoose.model('user', userSchema);
+Account.plugin( passportLocalMongoose );
 
-module.exports = user
+module.exports = mongoose.model('Account', Account);
