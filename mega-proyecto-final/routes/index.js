@@ -46,9 +46,8 @@ router.post('/sign-up', (req,res) => {
 
 	Account.register( new Account(userInputs), password, (err, account) => {
 		if (err) return res.render('sign-up', { account : account });
-		console.log(account)
 		passport.authenticate('local')(req, res, () =>  
-			res.redirect('/sign-up-success') );
+			res.redirect('/search') );
 	});
 })
 router.get('/login', function(req, res) {

@@ -3,9 +3,7 @@ const bodyparser = require('body-parser')
 const fs = require('fs');
 const http = require('http');
 const router = express.Router()
-
 require('./db');
-
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const logger = require('morgan');
@@ -38,22 +36,22 @@ passport.use( new LocalStrategy( Account.authenticate() ) );
 passport.serializeUser( Account.serializeUser() );
 passport.deserializeUser( Account.deserializeUser() );
 
-const routerAuthLocal = require('./routes')
-app.use('/local', routerAuthLocal)
+// const routerAuthLocal = require('./routes')
+// app.use('./routes', routerAuthLocal)
 
 // routes
-app.get('/', function (req, res) {
-	const user = req.user;
-	const auth_method = AUTH;
-  res.render('index', { user, auth_method });
-});
-app.get('/account', isAuthenticated, (req, res) => {
-	const userId = req.session.passport.user;
-	const message = req.flash('message');
-	User.findById( userId )
-		.then( user => res.render( 'account', { user, message } ) )
-		.catch( console.log )
-});
+// app.get('/', function (req, res) {
+// 	const user = req.user;
+// 	const auth_method = AUTH;
+//   res.render('index', { user, auth_method });
+// });
+// app.get('/account', isAuthenticated, (req, res) => {
+// 	const userId = req.session.passport.user;
+// 	const message = req.flash('message');
+// 	User.findById( userId )
+// 		.then( user => res.render( 'account', { user, message } ) )
+// 		.catch( console.log )
+// });
 // app.get('/logout', (req, res) => {
 //   req.logout();
 //   res.redirect('/');

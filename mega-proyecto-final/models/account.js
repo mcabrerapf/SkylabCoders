@@ -24,4 +24,4 @@ const Account = new Schema({
 // Model definition
 Account.plugin( passportLocalMongoose );
 
-module.exports = mongoose.model('Account', Account);
+module.exports = mongoose.model('datos', Account);
